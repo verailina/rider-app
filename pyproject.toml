@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "rider"
+version = "0.1.0"
+description = ""
+authors = ["Vera <vvegorova@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = ">=3.7,<3.11"
+pandas = "^1.3.3"
+numpy = "^1.21.2"
+geopy = "^2.2.0"
+matplotlib = "^3.4.3"
+tqdm = "^4.62.3"
+streamlit = "^0.89.0"
+
+[tool.poetry.dev-dependencies]
+pytest = "^5.2"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
