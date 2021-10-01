@@ -9,7 +9,7 @@ from rider.plotting import plot_one
 
 def generate_random_df(n=3) -> pd.DataFrame:
     dfs = []
-
+    np.random.seed(10)
     def random_track(size):
         track = [(50, 50)]
         for delta in np.random.uniform(-0.5, 1., (size, 2)):
