@@ -36,7 +36,7 @@ points_df = generate_random_df()
 trips, routes = get_trips_and_routes(points_df)
 first_track = st.selectbox("Выберите трек",
                            [str(int(i)) for i in range(len(routes))])
-st.write(points_df.lock(["track_0"]))
+st.write(points_df.loc(["track_0"]))
 st.write(plot_one(routes[int(first_track)]))
 
 
