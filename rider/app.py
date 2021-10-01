@@ -24,19 +24,19 @@ def generate_random_df(n=3) -> pd.DataFrame:
         df["car"] = f"car{i}"
         df["time"] = 123
         dfs.append(df)
-    return pd.concat(dfs)
+    return pd.concat(dfs, keys=[f"track_{i}" for i in range(n)])
 
 
 st.title("Треки поездок")
 
 #points_df = pd.DataFrame.from_records(trackpoints("data"))
 points_df = generate_random_df()
-st.write(points_df.head())
+
 
 trips, routes = get_trips_and_routes(points_df)
 first_track = st.selectbox("Выберите трек",
                            [str(int(i)) for i in range(len(routes))])
-
+st.write(points_df.lock(["track_0"]))
 st.write(plot_one(routes[int(first_track)]))
 
 
