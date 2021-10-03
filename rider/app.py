@@ -36,7 +36,6 @@ points_df = generate_random_df()
 trips, routes = get_trips_and_routes(points_df)
 first_track = st.selectbox("Выберите трек",
                            [str(int(i)) for i in range(len(routes))])
-st.write(type(first_track))
 track_name = f"track_{int(first_track)}"
 track_df = points_df.loc[track_name]
 track_df["track"] = track_name
