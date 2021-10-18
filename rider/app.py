@@ -2,6 +2,8 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 
+import plotly.express as px
+
 from rider.files import trackpoints
 from rider.routes import get_trips_and_routes
 from rider.plotting import plot_one
@@ -40,6 +42,7 @@ first_track = st.selectbox("Выберите трек",
 track_df = points_df.loc[first_track]
 track_df["track"] = first_track
 st.write(track_df)
-st.write(plot_one(routes[int(first_track[-1])]))
+st.write(px.scatter(routes[int(first_track[-1])], x="lon", y="lat"))
+#st.write(plot_one(routes[int(first_track[-1])]))
 
 
